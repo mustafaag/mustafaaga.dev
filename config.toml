@@ -1,3 +1,47 @@
 baseURL = 'https://mustafaaga.dev/'
 languageCode = 'en-us'
 title = 'Mustafa The developer'
+
+[Params]
+
+  description = "Jane Doe's Portfolio!"
+  [Params.Terminal]
+
+  schema = "monokai"
+
+  userName = "root"
+  pcName = "mustafaaga.dev"
+  workDir = "mydir"
+  profile = "page.html"
+
+  ps1Delay = 0 # prompt speed : [userName]@[pcName]:~/$ , [userName]@[pcName]:~/[workDir]$
+  stdoutDelay = 0 # stdout speed : [description] , files in Params.Tree
+  commandDelay = 50 # command speed : cd [workDir] , cat [profile] , tree ./[folderName]/
+
+  titleDelay = 0 # title speed : "title" in front matter
+  contentDelay = 0 # content speed : content in .md file
+
+
+  description = """
+  Hi I am Mustafa, welcome to my site!
+  Nice to meet you!
+  """
+
+  # Note: If you want to use a Markdown file, you can use the following
+  # description = "/description.md"
+  # Note: and put the description.md in /content/description.md
+
+  [Params.Tree]
+  use = true
+  folderName = "my_activity"
+  # Note: ["ACTIVITY", "URL or PATH TO YOUR MARKDOWN FILE"]
+  files = [ 
+    ["About Me", "/post/some-activity.md", "_self"],
+    ["My blog", "/post/some-activity.md", "_self"],
+    ["My Socials", "https://biolincs.me/mustafaaga-dev","_blank"],
+  ]
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.85.0"
